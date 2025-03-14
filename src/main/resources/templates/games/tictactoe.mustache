@@ -1,0 +1,80 @@
+{{>layouts/header}}
+<div class="container">
+    <div class="row g-0 justify-content-center custom-row bg-primary">
+        <div class="col fixed-col">
+            <div class="cell bg-secondary-subtle d-flex
+            justify-content-center align-items-center border border-dark">
+                O
+            </div>
+        </div>
+        <div class="col
+            fixed-col">
+            <div class="cell bg-secondary-subtle d-flex
+            justify-content-center align-items-center border border-dark">
+
+            </div>
+        </div>
+        <div class="col
+            fixed-col">
+            <div class="cell bg-secondary-subtle d-flex
+            justify-content-center align-items-center border border-dark">
+
+            </div>
+        </div>
+    </div>
+    <div class="row g-0 justify-content-center custom-row bg-primary">
+        <div class="col
+            fixed-col">
+            <div class="cell bg-secondary-subtle d-flex
+            justify-content-center align-items-center border border-dark">
+
+            </div>
+        </div>
+        <div class="col
+            fixed-col">
+            <div class="cell bg-secondary-subtle d-flex
+            justify-content-center align-items-center border border-dark">
+
+            </div>
+        </div>
+        <div class="col
+            fixed-col">
+            <div class="cell bg-secondary-subtle d-flex
+            justify-content-center align-items-center border border-dark">
+
+            </div>
+        </div>
+    </div>
+    <div class="row g-0 justify-content-center custom-row bg-primary">
+        <div class="col
+            fixed-col">
+            <div class="cell bg-secondary-subtle d-flex
+            justify-content-center align-items-center border border-dark">
+
+            </div>
+        </div>
+        <div class="col
+            fixed-col">
+            <div class="cell bg-secondary-subtle d-flex
+            justify-content-center align-items-center border border-dark">
+
+            </div>
+        </div>
+        <div class="col
+            fixed-col">
+            <div class="cell bg-secondary-subtle d-flex
+            justify-content-center align-items-center border border-dark">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const cells = document.querySelectorAll(".cell");
+    cells.forEach((c, index) => {
+        c.addEventListener("click", () => {
+            console.log(`${index}번째 버튼 클릭함!`);
+        });
+    });
+</script>
+{{>layouts/footer}}

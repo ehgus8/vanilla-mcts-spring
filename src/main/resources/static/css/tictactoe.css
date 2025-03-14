@@ -1,0 +1,17 @@
+.custom-row {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.fixed-col {
+      width: 100px;
+}
+
+.cell {
+    height: 100px;
+    width: 100px;
+}
+
+.cell:hover {
+    filter: brightness(0.8);
+}
