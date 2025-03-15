@@ -19,10 +19,7 @@ public class GameService {
         Node root = new Node(null, null, currentPlayer, gameStateDto.moveCount);
         MCTS.mcts(game, root, mctsIterations);
         Point action = root.getNextAction("maxVisit");
-        gameStateDto.setAction(action);
         currentPlayer = game.applyAction(currentPlayer, action);
-        gameStateDto.moveCount++;
-        gameStateDto.prevPlayer = -currentPlayer;
         winner = game.checkWinner(currentPlayer * -1, action);
 
         for(Node child: root.children) {
@@ -35,10 +32,18 @@ public class GameService {
         else if(gameStateDto.moveCount == game.rows * game.cols) {
             gameStateDto.result = 0;
         }
+        gameStateDto.setAction(action);
+        gameStateDto.moveCount++;
+        gameStateDto.prevPlayer = -currentPlayer;
     }
-    public GameStateDto play(BoardGame game, GameStateDto gameStateDto) {
+    public GameStateDto play(BoardGame game, GameStateDto gameStateDto, int mctsIterations) {
         game.board = gameStateDto.board; // shallow copy
-        GameService.playOnceByMCTS(game, 100, gameStateDto);
+        int winner = game.checkWinner(gameStateDto.prevPlayer, new Point(gameStateDto.x, gameStateDto.y));
+        if(winner != 0) {
+            gameStateDto.result = 1;
+            return gameStateDto;
+        }
+        GameService.playOnceByMCTS(game, mctsIterations, gameStateDto);
         return gameStateDto;
     }
 }

@@ -1,0 +1,22 @@
+.container {
+    min-width: 1250px;
+    overflow-x: auto;
+}
+
+.custom-row {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.fixed-col {
+      width: 50px;
+}
+
+.cell {
+    height: 50px;
+    width: 50px;
+}
+
+.cell:hover {
+    filter: brightness(0.8);
+}

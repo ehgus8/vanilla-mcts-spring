@@ -28,8 +28,8 @@ public class MCTS {
             if(currentNode.parent != null) {
                 int winner = game.checkWinner(currentNode.parent.currentPlayer, currentNode.prevAction);
                 if(winner != 0) {
-                    double value = currentNode.parent.currentPlayer == winner ? 1 : -1;
-                    currentNode.backup(game, trace, value);
+//                    double value = currentNode.parent.currentPlayer == winner ? 1 : -1;
+                    currentNode.backup(game, trace, currentNode.parent.currentPlayer == winner ? 1 : -1);
                     continue;
                 } else if (currentNode.moveCount == game.rows * game.cols) {
                     currentNode.backup(game, trace, 0);
